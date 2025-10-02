@@ -78,7 +78,6 @@ function loadCondition(condition) {
       }
       if (conditionData.whatToCheck === "item_type") {
         sequence.push(["click", { slot: 12 }]);
-        sequence.push(["click", { slot: 10 }]);
       }
       if (conditionData.whereToCheck && conditionData.whereToCheck !== "anywhere") {
         sequence.push(["click", { slot: 13 }]);
@@ -89,7 +88,6 @@ function loadCondition(condition) {
       }
       if (conditionData.requireAmount) {
         sequence.push(["click", { slot: 14 }]);
-        sequence.push(["click", { slot: 11 }]);
       }
       sequence.push(["back"]);
       break;
@@ -106,7 +104,6 @@ function loadCondition(condition) {
       }
       if (conditionData.whatToCheck === "item_type") {
         sequence.push(["click", { slot: 12 }]);
-        sequence.push(["click", { slot: 10 }]);
       }
       if (conditionData.whereToCheck && conditionData.whereToCheck !== "anywhere") {
         sequence.push(["click", { slot: 13 }]);
@@ -117,7 +114,6 @@ function loadCondition(condition) {
       }
       if (conditionData.requireAmount) {
         sequence.push(["click", { slot: 14 }]);
-        sequence.push(["click", { slot: 11 }]);
       }
       sequence.push(["back"]);
       break;
@@ -154,8 +150,8 @@ function loadCondition(condition) {
         sequence.push(["click", { slot: 10 }]);
       }
       if (conditionData.holder && conditionData.holder !== "Player") {
-        sequence.push(["click", { slot: 11 }]);
-        sequence.push(["option", { option: conditionData.holder }]);
+        if (conditionData.holder === "global") sequence.push(["click", { slot: 10 }]);
+        if (conditionData.holder === "team") sequence.push(["click", { slot: 10 }]); sequence.push(["click", { slot: 10 }]);
       }
       if (conditionData.stat && conditionData.stat !== "Kills") {
         sequence.push(["click", { slot: 12 }]);
@@ -211,7 +207,6 @@ function loadCondition(condition) {
         sequence.push(["click", { slot: 10 }]);
       }
       sequence.push(["click", { slot: 11 }]);
-      sequence.push(["click", { slot: 11 }]);
       if (conditionData.stat && conditionData.stat !== "Kills") {
         sequence.push(["click", { slot: 12 }]);
         sequence.push(["chat", { text: conditionData.stat }]);
@@ -240,7 +235,8 @@ function loadCondition(condition) {
         sequence.push(["click", { slot: 10 }]);
       }
       sequence.push(["click", { slot: 11 }]);
-      sequence.push(["click", { slot: 12 }]);
+      sequence.push(["click", { slot: 11 }]);
+      sequence.push(["click", { slot: 11 }]);
       if (conditionData.team) {
         sequence.push(["click", { slot: 12 }]);
         sequence.push(["option", { option: conditionData.team }]);
@@ -479,10 +475,9 @@ function loadCondition(condition) {
         sequence.push(["click", { slot: 10 }]);
       }
       if (conditionData.gamemode) {
-        sequence.push(["click", { slot: 11 }]);
-        if (conditionData.gamemode === "adventure") sequence.push(["click", { slot: 10 }]);
-        if (conditionData.gamemode === "survival") sequence.push(["click", { slot: 11 }]);
-        if (conditionData.gamemode === "creative") sequence.push(["click", { slot: 12 }]);
+        if (conditionData.gamemode === "adventure") sequence.push(["click", { slot: 11 }]);
+        if (conditionData.gamemode === "survival") sequence.push(["click", { slot: 11 }]); sequence.push(["click", { slot: 11 }]);
+        if (conditionData.gamemode === "creative") sequence.push(["click", { slot: 11 }]); sequence.push(["click", { slot: 11 }]); sequence.push(["click", { slot: 11 }]);
       }
       sequence.push(["back"]);
       break;
