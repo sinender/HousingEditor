@@ -34,12 +34,22 @@ export default (actionData) => {
     sequence.push(["click", { slot: 13 }]);
   }
 
-  if (actionData.prioritizePlayer) {
+  if (actionData.despawnDuration) {
     sequence.push(["click", { slot: 14 }]);
+    sequence.push(["chat", { text: actionData.despawnDuration.toString() }]);
+  }
+
+  if (actionData.pickupDelay) {
+    sequence.push(["click", { slot: 15 }]);
+    sequence.push(["chat", { text: actionData.pickupDelay.toString() }]);
+  }
+
+  if (actionData.prioritizePlayer) {
+    sequence.push(["click", { slot: 16 }]);
   }
 
   if (actionData.fallbackToInventory) {
-    sequence.push(["click", { slot: 15 }]);
+    sequence.push(["click", { slot: 19 }]);
   }
   return ["Drop Item", sequence];
 };

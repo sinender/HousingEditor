@@ -3,7 +3,7 @@ export default (actionData) => {
 
     //Team Holder
     sequence.push(["click", { slot: 10 }]);
-    sequence.push(["click", { slot: 12 }]);
+    sequence.push(["click", { slot: 10 }]);
 
     if (actionData.team) {
         sequence.push(["click", { slot: 11 }]);

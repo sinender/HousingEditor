@@ -3,7 +3,6 @@ export default (actionData) => {
 
   //Global Holder
   sequence.push(["click", { slot: 10 }]);
-  sequence.push(["click", { slot: 11 }]);
 
     if (actionData.stat && actionData.stat !== "Kills") {
     sequence.push(["click", { slot: 11 }]);

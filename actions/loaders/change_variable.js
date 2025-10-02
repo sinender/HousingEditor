@@ -2,9 +2,8 @@ export default (actionData) => {
   let sequence = [];
 
   if (actionData.holder !== "player") {
-    sequence.push(["click", { slot: 10 }]);
-    if (actionData.holder === "global") sequence.push(["click", { slot: 11 }]);
-    if (actionData.holder === "team") sequence.push(["click", { slot: 12 }]);
+    if (actionData.holder === "global") sequence.push(["click", { slot: 10 }]);
+    if (actionData.holder === "team") sequence.push(["click", { slot: 10 }]); sequence.push(["click", { slot: 10 }]);
   }
 
   var slot = 0;
